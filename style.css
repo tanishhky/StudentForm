@@ -7,6 +7,9 @@ nav{
     color: white;
     width: 100%;
 }
+.heading{
+    font-size: 2vw;
+}
 nav ul{
     list-style: none;
     display: flex;
@@ -19,13 +22,16 @@ nav ul li{
     padding: 0%;
 }
 nav img{
-    width: 60px;
+    width: 90px;
     margin:10px 10px 10px 10px;
 }
 
-.formContainer{
-    align-self: center;
-    align-content: center;
-    align-content: center;
+.contactus{
+    height:100%;
+}
+
+.formContainer form {
+    margin: 4% auto;
     width: 60%;
+    
 }
