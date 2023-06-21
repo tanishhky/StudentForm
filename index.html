@@ -10,6 +10,7 @@
     </head>
 
     <body>
+        
         <nav>
             <ul>
                 <li><img src="Assets/logo.png" alt="logo"></li>
@@ -18,29 +19,30 @@
                 <li></li>
             </ul>
         </nav>
+
         <div class="formContainer">
-            <form action="">
+            <form action="" id="studentForm">
                 <input type="image">
                 <fieldset>
                     <legend class="headin">NAME OF THE STUDENT</legend>
-                    <div class="ques" id="1">
+                    <div class="ques">
                         <text>First Name : </text>
                     </div>
-                    <div class="ans" id="1">
+                    <div class="ans" id="fn">
                         <input type="text" required>
                     </div>
                     <br>
                     <div class="ques">
                         <text>Middle Name : </text>
                     </div>
-                    <div class="ans">
+                    <div class="ans" id="mn">
                         <input type="text">
                     </div>
                     <br>
                     <div class="ques">
                         <text>Last Name : </text>
                     </div>
-                    <div class="ans">
+                    <div class="ans" id="ln">
                         <input type="text" required>
                     </div>
                 </fieldset>
@@ -48,7 +50,7 @@
                     <div class="ques">
                         <legend class="headin">MAIL ADDRESS</legend>
                     </div>
-                    <div class="ans">
+                    <div class="ans" id="mail">
                         <input type="email" required>
                     </div>
                 </fieldset>
@@ -58,7 +60,7 @@
                         <text>Enter your Branch</text>
                     </div>
                     <div class="ans">
-                        <select name="Branch" id="branch">
+                        <select name="Branch" id="branch" onchange="updateOptions()">
                             <option value="">--Select a Branch--</option>
                             <option value="BTech">BTech</option>
                             <option value="BSc">BSc</option>
@@ -74,12 +76,15 @@
                     </div>
                     <div class="ans">
                         <select name="Year" id="year">
-                            <option value="">--Select your Year--</option>
+                            
                         </select>
                     </div>
                 </fieldset>
-        </form>
+                <input type="submit">
+                <input type="reset">
+            </form>
         </div>
+        <script src="script.js"></script>
         
     </body>
 </html>
