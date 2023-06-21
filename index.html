@@ -1,42 +1,83 @@
 <!DOCTYPE html>
+
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Student Data Collection</title>
-    <link rel="icon" href="Assets/logo.ico">
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <nav>
-        <ul>
-            <li><img src="Assets/logo.png" alt="logo"></li>
-            <li class="heading">STUDENT DATA COLLECTION</li>
-            <li><button class="contactus">CONTACT US</button> </li>
-            <li></li>
-        </ul>
-    </nav>
-    <div class="formContainer">
-        <form action="">
-            <fieldset>
-                <legend>NAME OF THE STUDENT</legend>
-                <legend>First Name</legend>
-                <input type="text" required>
-                <legend>Middle Name</legend>
-                <input type="text">
-                <legend>Last Name</legend>
-                <input type="text" required>
-                </p>
-            </fieldset>
-            <fieldset>
-                <legend>MAIL ADDRESS</legend>
-                <input type="email" required>
-            </fieldset>
-            <fieldset>
-                <legend>C</legend>
-            </fieldset>
-    </form>
-    </div>
-    
-</body>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Student Data Collection</title>
+        <link rel="icon" href="Assets/logo.ico">
+        <link rel="stylesheet" href="style.css">
+    </head>
+
+    <body>
+        <nav>
+            <ul>
+                <li><img src="Assets/logo.png" alt="logo"></li>
+                <li class="heading">STUDENT DATA COLLECTION</li>
+                <li><button class="contactus">CONTACT US</button> </li>
+                <li></li>
+            </ul>
+        </nav>
+        <div class="formContainer">
+            <form action="">
+                <input type="image">
+                <fieldset>
+                    <legend class="headin">NAME OF THE STUDENT</legend>
+                    <div class="ques" id="1">
+                        <text>First Name : </text>
+                    </div>
+                    <div class="ans" id="1">
+                        <input type="text" required>
+                    </div>
+                    <br>
+                    <div class="ques">
+                        <text>Middle Name : </text>
+                    </div>
+                    <div class="ans">
+                        <input type="text">
+                    </div>
+                    <br>
+                    <div class="ques">
+                        <text>Last Name : </text>
+                    </div>
+                    <div class="ans">
+                        <input type="text" required>
+                    </div>
+                </fieldset>
+                <fieldset>
+                    <div class="ques">
+                        <legend class="headin">MAIL ADDRESS</legend>
+                    </div>
+                    <div class="ans">
+                        <input type="email" required>
+                    </div>
+                </fieldset>
+                <fieldset>
+                    <legend class="headin">COURSE DETAILS</legend>
+                    <div class="ques">
+                        <text>Enter your Branch</text>
+                    </div>
+                    <div class="ans">
+                        <select name="Branch" id="branch">
+                            <option id="branch" value="">--Select a Branch--</option>
+                            <option id="branch" value="BTech">BTech</option>
+                            <option id="branch" value="BSc">BSc</option>
+                            <option id="branch" value="Mtech">Mtech</option>
+                            <option id="branch" value="MSc">MSc</option>
+                            <option id="branch" value="BBA">BBA</option>
+                            <option id="branch" value="MBA">MBA</option>
+                            <option id="branch" value="PhD">PhD</option>
+                        </select>
+                    </div>
+                    <div class="ques">
+                        <text></text>
+                    </div>
+                    <div class="ans">
+                        
+                    </div>
+                </fieldset>
+        </form>
+        </div>
+        
+    </body>
 </html>
