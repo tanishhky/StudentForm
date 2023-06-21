@@ -10,19 +10,21 @@
     </head>
 
     <body>
-        
+
         <nav>
-            <ul>
-                <li><img src="Assets/logo.png" alt="logo"></li>
-                <li class="heading">STUDENT DATA COLLECTION</li>
-                <li><button class="contactus">CONTACT US</button> </li>
-                <li></li>
-            </ul>
+            <div><img src="Assets/logo.png" alt="logo"></div>
+            <div class="heading">STUDENT DATA COLLECTION</div>
+            <div id="contact"><a>CONTACT US</a> </div>
         </nav>
 
         <div class="formContainer">
             <form action="" id="studentForm">
-                <input type="image">
+                <div class="pfp">
+                    <img src="Assets/logo.png" id="preview" alt="">
+                    <br><br>
+                    <input type="file" onchange="previewImage(event)">
+                </div>
+                    <br>
                 <fieldset>
                     <legend class="headin">NAME OF THE STUDENT</legend>
                     <div class="ques">
@@ -47,9 +49,7 @@
                     </div>
                 </fieldset>
                 <fieldset>
-                    <div class="ques">
-                        <legend class="headin">MAIL ADDRESS</legend>
-                    </div>
+                    <legend class="headin">MAIL ADDRESS</legend>
                     <div class="ans" id="mail">
                         <input type="email" required>
                     </div>
@@ -80,11 +80,14 @@
                         </select>
                     </div>
                 </fieldset>
-                <input type="submit">
-                <input type="reset">
+                <div class="submission">
+                    <input type="submit">
+                    <input type="reset">
+                </div>
+                
             </form>
         </div>
         <script src="script.js"></script>
-        
+        <script src="https://kit.fontawesome.com/ef5e0a1619.js" crossorigin="anonymous"></script>
     </body>
 </html>
