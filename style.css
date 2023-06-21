@@ -15,6 +15,7 @@ nav {
     top: 0%;
     margin: 0%;
     height: fit-content;
+    font-family: 'Tilt Prism',cursive;
 }
 .heading {
     font-size: 2vw;
@@ -30,17 +31,14 @@ nav img {
     width: 10vw;
     margin: 10px 10px 10px 10px;
 }
-nav ul li a{
-    right: 0vh;
-    width: 20vw;
-    color: black;
-}
+
 #contact{
+    text-decoration:none;
     background-color: white;
     height: 8vw;
     width: 20vw;
     color: black;
-    font-size: 4vw;
+    font-size: 3.5vw;
     padding: 1vw 2vw;
     margin-right: 2vw;
     text-align: center;
@@ -89,11 +87,15 @@ nav ul li a{
 }
 .pfp{
     height: fit-content;
+    
 }
 .pfp img{
     width: 10vh;
     scale: 2;
     margin: 6vh 0vh 0 0vh;
+    border-radius: 10vh;
+    border-width: 0.1vh;
+    border-style: solid;
     /* padding: 4vh; */
     width: 4vh;
     height: 4vh;
