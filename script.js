@@ -63,7 +63,7 @@ function updateOptions() {
       // Additional code to save or process the JSON data as needed
   
       // Reset the form
-      // studentForm.reset();
+      studentForm.reset();
     });
   }
   
