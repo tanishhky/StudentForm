@@ -1,93 +1,194 @@
 <!DOCTYPE html>
-
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Student Data Collection</title>
-        <link rel="icon" href="Assets/logo.ico">
-        <link rel="stylesheet" href="style.css">
-    </head>
 
-    <body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consent Collector</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/virtual-select.min.css">
+</head>
 
-        <nav>
-            <div><img src="Assets/logo.png" alt="logo"></div>
-            <div class="heading">STUDENT DATA COLLECTION</div>
-            <div id="contact"><a href="mailto:tanishhky@gmail.com" style="text-decoration: none; color: inherit;">CONTACT US</a> </div>
-        </nav>
-
-        <div class="formContainer">
-            <form action="" id="studentForm">
-                <div class="pfp">
-                    <img src="Assets/logo.png" id="preview" alt="">
-                    <br><br>
-                    <input type="file" id="pf" onchange="previewImage(event)">
+<body>
+    <div class="container mt-3">
+        <form class="consent">
+            <div class="row">
+                <div class="col-12 text-center adex-brand">
+                    <img src="https://dataexplorer.adex.org.in/assets/agri-logo.png" alt="Consent Collector">
+                    <h1>Consent Collector Service</h1>
                 </div>
-                    <br>
-                <fieldset>
-                    <legend class="headin">NAME OF THE STUDENT</legend>
-                    <div class="ques">
-                        <text>First Name : </text>
+            </div>
+            <hr>
+            <div class="row aip-details w-100 my-4">
+                <div class="col-lg-6 col-12">
+                    <h1 class="ribbon">Details</h1>
+                </div>
+                <div class="col-6 justify-content-lg-end d-flex" style="font-size: 12px;">
+                    <span class="asterisk">* Required Fields</span>
+                </div>
+            </div>
+            <div class="row mt-4">
+                <div class="col-lg-6 col-12 text-center">
+                    <div class="input-group mb-4">
+                        </span>
+                        <span class="input-group-text hover-text m-0">
+                            AIP Id
+                            <span class="asterisk">&nbsp*</span>
+                        </span>
+                        <input type="text" class="form-control" id="aipId" oninput="validateUUID()">
+                        <span id="uuidValidationMessage"></span>
                     </div>
-                    <div class="ans" id="fn">
-                        <input type="text" required>
+                </div>
+                <div class="col-lg-6 col-12">
+                    <div class="input-group mb-4">
+                        <span class="input-group-text">
+                            AIP Email
+                            <span class="asterisk">&nbsp*</span>
+                        </span>
+                        <input type="email" class="form-control emails" id="aipEmail" pattern="[^\s@]+@[^\s@]+\.[^\s@]+"
+                            onchange="validateEmail()">
+                        <span id="emailValidationMessage" class="validation-message"></span>
+
                     </div>
-                    <br>
-                    <div class="ques">
-                        <text>Middle Name : </text>
+                </div>
+                <div class="col-lg-6 col-12">
+                    <div class="input-group mb-4">
+                        <span class="input-group-text">
+                            AIP Name
+                            <span class="asterisk">&nbsp*</span>
+                        </span>
+                        <input type="text" class="form-control" id="aipName" oninput="validateName()">
+                        <span id="nameValidationMessage"></span>
                     </div>
-                    <div class="ans" id="mn">
-                        <input type="text">
+                </div>
+                <div class="col-lg-6 col-12">
+                    <div class="input-group mb-4">
+                        <span class="input-group-text">
+                            Data Principal Id
+                            <span class="asterisk">&nbsp*</span>
+                        </span>
+                        <input type="text" class="form-control" id="dpID" onchange="DPIDValidation()">
+                        <span id="dpIDValidationMessage"></span>
                     </div>
-                    <br>
-                    <div class="ques">
-                        <text>Last Name : </text>
+                </div>
+
+                <div class="col-lg-6 col-12">
+                    <div class="input-group mb-4">
+                        <span class="input-group-text">
+                            DataPrincipal Name
+                            <span class="asterisk">&nbsp*</span>
+                        </span>
+                        <input type="text" class="form-control" id="dpName">
+                        <span id="dpNameValidationMessage"></span>
                     </div>
-                    <div class="ans" id="ln">
-                        <input type="text" required>
+                </div>
+
+                <div class="col-lg-6 col-12">
+                    <div class="input-group mb-4">
+                        <span class="input-group-text">
+                            Artifact Expiry
+                            <span class="asterisk">&nbsp*</span>
+                        </span>
+                        <input type="date" class="form-control" onkeydown="return false" id="dateInput">
                     </div>
-                </fieldset>
-                <fieldset>
-                    <legend class="headin">MAIL ADDRESS</legend>
-                    <div class="ans" id="mail">
-                        <input type="email" required>
+                </div>
+                <div class="col-lg-6 col-12">
+                    <div class="input-group mb-4">
+                        <span class="input-group-text">
+                            Item Id
+                            <span class="asterisk">&nbsp*</span>
+                        </span>
+                        <input type="text" class="form-control" id="itemInp">
                     </div>
-                </fieldset>
-                <fieldset>
-                    <legend class="headin">COURSE DETAILS</legend>
-                    <div class="ques">
-                        <text>Enter your Branch</text>
-                    </div>
-                    <div class="ans">
-                        <select name="Branch" id="branch" onchange="updateOptions()">
-                            <option value="">--Select a Branch--</option>
-                            <option value="BTech">BTech</option>
-                            <option value="BSc">BSc</option>
-                            <option value="Mtech">Mtech</option>
-                            <option value="MSc">MSc</option>
-                            <option value="BBA">BBA</option>
-                            <option value="MBA">MBA</option>
-                            <option value="PhD">PhD</option>
+                </div>
+                <div class="col-lg-6 col-12">
+                    <div class="input-group mb-3">
+                        <label class="input-group-text">Item Type</label>
+                        <select class="form-select p-0" id="itemtype" readonly>
+                            <option value="1">Resource1</option>
+                            <option value="2">Resource Group</option>
                         </select>
                     </div>
-                    <div class="ques">
-                        <text>Enter the year you are in : </text>
-                    </div>
-                    <div class="ans">
-                        <select name="Year" id="year">
-                            
+                </div>
+
+                <div class="col-lg-6 col-12">
+                    <div class="input-group mb-4">
+                        <label class="input-group-text">
+                            Purposes
+                            <span class="asterisk">&nbsp*</span>
+                        </label>
+                        <select multiple id="purpose" data-search="false" data-silent-initial-value-set="true">
+                            <option value="B1">Agricultural credit (code B1)</option>
+                            <option value="B2">Insurance (code B2)</option>
+                            <option value="B3">Logistics(code B3)</option>
+                            <option value="B4">Storage-related services (code B4)</option>
+                            <option value="B5">Market-related services (code B5)</option>
+                            <option value="B6">Payment services (code B6)</option>
+                            <option value="P1">Farm advisories (code P1)</option>
+                            <option value="P2">Pest and disease management (code P2)</option>
+                            <option value="P3">Water management (code P3)</option>
+                            <option value="P4">Quality assurance (code P4)</option>
+                            <option value="P5">Soil Health (code P5)</option>
+                            <option value="G1">Benefits (code G1)</option>
+                            <option value="G2">Research (code G2)</option>
+                            <option value="G3">Innovation (code G3)</option>
+                            <option value="G4">Education (code G4)</option>
+                            <option value="G5">Data Principal use (code G5)</option>
                         </select>
                     </div>
-                </fieldset>
-                <div class="submission">
-                    <input type="submit">
-                    <input type="reset">
                 </div>
-                
-            </form>
-        </div>
-        <script src="script.js"></script>
-        <script src="https://kit.fontawesome.com/ef5e0a1619.js" crossorigin="anonymous"></script>
-    </body>
+            </div>
+            <div class="row aip-details my-4 w-100">
+                <div class="col-12">
+                    <h1 class="ribbon">Additional Details (optional)</h1>
+                </div>
+            </div>
+            <div class="row mt-4">
+                <div class="col-lg-6 col-12">
+                    <div class="input-group mb-3">
+                        <span class="input-group-text">
+                            AIU Id
+                        </span>
+                        <input type="text" class="form-control" id="aiuId" onchange="validateAIUID()">
+                        <span id="AIUIDValidationMessage"></span>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-12">
+                    <div class="input-group mb-3">
+                        <span class="input-group-text">
+                            AIU Name
+                        </span>
+                        <input type="text" class="form-control" id="aiuName" onchange="validateAIUName()">
+                        <span id="AIUNameValidationMessage" class="validation-message"></span>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-12">
+                    <div class="input-group mb-3">
+                        <span class="input-group-text">
+                            AIU Email
+                        </span>
+                        <input type="email" class="form-control emails" id="aiuEmail" pattern="[^\s@]+@[^\s@]+\.[^\s@]+"
+                            onchange="validateAIUEmail()">
+                        <span id="AIUemailValidationMessage" class="validation-message"></span>
+                    </div>
+                </div>
+                <div class="col-12 text-center">
+                    <a class="btn btn-primary w-25 mb-4 submit" id="lynk" type="button" onclick="conJSON()">Submit</a>
+                </div>
+                <div class="row"></div>
+
+            </div>
+            <script src="js/virtual-select.min.js"></script>
+            <script>
+                VirtualSelect.init({
+                    ele: 'select'
+                });
+            </script>
+            <script src="js/script.js"></script>
+        </form>
+    </div>
+</body>
+
 </html>
